@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guess the Number</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f8ff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                flex-direction: column;
+            }
+            h1 {
+                color: #333;
+            }
+            p {
+                font-size: 18px;
+                color: #666;
+            }
+            input[type="text"] {
+                width: 50px;
+                padding: 5px;
+                font-size: 16px;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                text-align: center;
+            }
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                font-size: 16px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Guess the Number Game</h1>
+        <p>Guess the number which I am thinking now!!</p>
+        <p>Enter a number between 1-10</p>
+        <p><input type="text" id="guess"></p>
+        <p><button id="b1"> Guess! </button></p>
+
+        <script type="text/javascript">
+            document.getElementById("b1").onclick = function() {
+                var randomnum = Math.floor(Math.random() * 10) + 1;
+                var enterdnum = document.getElementById("guess").value;
+
+                if (randomnum == enterdnum) {
+                    alert("You win");
+                } else {
+                    alert("Try again, I am thinking " + randomnum);
+                }
+            }
+        </script>
+    </body>
+</html>
